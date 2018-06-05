@@ -12,7 +12,6 @@ import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class MsgUtil {
     //产品名称:云通信短信API产品,开发者无需替换
@@ -24,6 +23,11 @@ public class MsgUtil {
     static final String accessKeyId = "LTAIjhsZwqru5tIv";
     static final String accessKeySecret = "XSg4q8r0TygmBHVLGrLfTGh0MgqQ1g";
 
+    /**
+     * 发送短信测试
+     * @return
+     * @throws ClientException
+     */
     public static SendSmsResponse sendSms() throws ClientException {
         //可自助调整超时时间
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
@@ -67,7 +71,7 @@ public class MsgUtil {
     }
 
     /**
-     * 发送短信
+     * 发送短信（含验证码）到多个电话号码
      * @param mallLiveMap   malllive.properties 的环境配置
      * @param telephoneList 电话列表
      * @param identifyCode  验证码
